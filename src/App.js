@@ -5,7 +5,7 @@ import './App.css';
 const NUMBER_OF_KEYS = 25;
 const STARTING_NOTE = 60;
 const KEY_ORDER= ['a','w','s','e','d','f','t','g','y','h','u','j','k','o','l','p',';'];
-const BKACK_KEYS=[1,3,6,8,10,13,15,18,20,22]
+const BLACK_KEYS=[1,3,6,8,10,13,15,18,20,22]
 let fired = false;
 
 class App extends Component {
@@ -27,7 +27,7 @@ class App extends Component {
   printKeys(){
     let keys = []
       for (let i = 0; i < NUMBER_OF_KEYS; i++) {
-      if (!BKACK_KEYS.includes(i)){
+      if (!BLACK_KEYS.includes(i)){
         keys.push(<button className={(this.state.keyPressed === i) ? "White-key-pressed" : 'White-key'} value={i} onMouseDown={this.noteClicked}>
                       {this.state.showKeyMapping && <h2 className="White-key-text">{KEY_ORDER[i]}</h2>}
                       </button>)
